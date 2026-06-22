@@ -1,5 +1,6 @@
 # Hub-i
 
+[![App Store](https://img.shields.io/badge/App_Store-$7.99-blue.svg)](https://apps.apple.com/us/app/hub-i/id6774415687)
 > 原生 iOS 多 AI 聊天客户端 — SwiftUI + SwiftData，零数据收集，本地优先
 
 [![iOS](https://img.shields.io/badge/iOS-17.0+-blue.svg)](https://www.apple.com/ios/)
