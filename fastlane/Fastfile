@@ -1,0 +1,74 @@
+# Hub-i Fastlane Configuration
+
+default_platform(:ios)
+
+platform :ios do
+  before_all do
+    ENV["FASTLANE_ITUNES_TRANSPORTER_USE_SHELL_SCRIPT"] = "1"
+  end
+
+  # ── API Key (shared across all lanes) ──
+  def hubi_api_key
+    app_store_connect_api_key(
+      key_id: "4973RP445Y",
+      issuer_id: "8e2d2a9f-57a5-4ea1-9030-25180dfd7f1f",
+      key_filepath: "/Users/mc.ddong/.appstoreconnect/AuthKey_4973RP445Y.p8",
+      duration: 1200
+    )
+  end
+
+  # ── Build ──
+  desc "Build the app (Debug)"
+  lane :build do
+    build_app(
+      workspace: "Hubi.xcworkspace",
+      scheme: "Hubi",
+      configuration: "Debug",
+      destination: "generic/platform=iOS Simulator",
+      skip_archive: true
+    )
+  end
+
+  # ── Archive & Upload to TestFlight ──
+  desc "Archive and upload to TestFlight"
+  lane :beta do
+    increment_build_number(xcodeproj: "Hubi.xcodeproj")
+    build_app(
+      workspace: "Hubi.xcworkspace",
+      scheme: "Hubi",
+      configuration: "Release",
+      export_method: "app-store"
+    )
+    upload_to_testflight(
+      api_key: hubi_api_key,
+      skip_waiting_for_build_processing: false,
+      apple_id: "your@email.com"  # optional, for notifications
+    )
+  end
+
+  # ── Upload only (assumes archive exists) ──
+  desc "Upload existing archive to TestFlight"
+  lane :upload do
+    upload_to_testflight(
+      api_key: hubi_api_key,
+      skip_waiting_for_build_processing: false,
+      ipa: lane_context[SharedValues::IPA_OUTPUT_PATH]
+    )
+  end
+
+  # ── Get latest TestFlight build number ──
+  desc "Show latest TestFlight build number"
+  lane :latest_build do
+    build = latest_testflight_build_number(
+      api_key: hubi_api_key,
+      app_identifier: "com.hubi.ap"
+    )
+    UI.success("Latest TestFlight build: #{build}")
+  end
+
+  # ── Refresh provisioning profiles ──
+  desc "Sync provisioning profiles"
+  lane :sync_profiles do
+    get_provisioning_profile(api_key: hubi_api_key)
+  end
+end

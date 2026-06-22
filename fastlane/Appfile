@@ -1,0 +1,12 @@
+# Hub-i Fastlane Configuration
+
+app_identifier("com.hubi.ap")
+
+# App Store Connect API Key
+api_key(
+  key_id: "4973RP445Y",
+  issuer_id: "8e2d2a9f-57a5-4ea1-9030-25180dfd7f1f",
+  key_filepath: "/Users/mc.ddong/.appstoreconnect/AuthKey_4973RP445Y.p8"
+)
+
+team_id("5BJ2L86A5P")

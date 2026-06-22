@@ -1,0 +1,87 @@
+name: Hubi
+options:
+  bundleIdPrefix: com.hubi
+  deploymentTarget:
+    iOS: "17.0"
+  createIntermediateGroups: true
+
+settings:
+  base:
+    SWIFT_VERSION: "6.0"
+    ENABLE_USER_SCRIPT_SANDBOXING: NO
+    DEVELOPMENT_TEAM: "5BJ2L86A5P"
+    CODE_SIGN_STYLE: Manual
+    PROVISIONING_PROFILE_SPECIFIER: b83fab56-0c06-487f-ac47-fa3cc55f1231
+    CODE_SIGN_IDENTITY: Apple Distribution
+
+targets:
+  Hubi:
+    type: application
+    platform: iOS
+    deploymentTarget: "17.0"
+    sources:
+      - path: Hubi
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.hubi.ap
+        TARGETED_DEVICE_FAMILY: "1"
+        GENERATE_INFOPLIST_FILE: NO
+        DEVELOPMENT_TEAM: "5BJ2L86A5P"
+    info:
+      path: Hubi/Resources/Info.plist
+      properties:
+        CFBundleDisplayName: Hub-i
+        CFBundleShortVersionString: "1.0.0"
+        CFBundleVersion: "8"
+        UILaunchScreen: {}
+        UISupportedInterfaceOrientations:
+          - UIInterfaceOrientationPortrait
+        NSPhotoLibraryAddUsageDescription: "用于保存 AI 生成的图片到相册"
+        NSCameraUsageDescription: "用于拍照发送给 AI"
+        NSMicrophoneUsageDescription: "用于录制语音消息发送给 AI"
+        NSSpeechRecognitionUsageDescription: "用于将语音转为文字"
+
+  HubiTests:
+    type: bundle.unit-test
+    platform: iOS
+    deploymentTarget: "17.0"
+    sources:
+      - path: HubiTests
+    dependencies:
+      - target: Hubi
+    settings:
+      base:
+        GENERATE_INFOPLIST_FILE: YES
+        BUNDLE_LOADER: "$(TEST_HOST)"
+        TEST_HOST: "$(BUILT_PRODUCTS_DIR)/Hubi.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Hubi"
+        PRODUCT_BUNDLE_IDENTIFIER: com.hubi.ap.tests
+        DEVELOPMENT_TEAM: "5BJ2L86A5P"
+
+  HubiUITests:
+    type: bundle.ui-testing
+    platform: iOS
+    deploymentTarget: "17.0"
+    sources:
+      - path: HubiUITests
+    dependencies:
+      - target: Hubi
+    settings:
+      base:
+        GENERATE_INFOPLIST_FILE: YES
+        PRODUCT_BUNDLE_IDENTIFIER: com.hubi.ap.uitests
+        DEVELOPMENT_TEAM: "5BJ2L86A5P"
+
+schemes:
+  Hubi:
+    build:
+      targets:
+        Hubi: all
+        HubiTests: [test]
+        HubiUITests: [test]
+    run:
+      config: Debug
+      storeKitConfiguration: Hubi/Resources/Configuration.storekit
+    test:
+      targets:
+        - HubiTests
+        - HubiUITests

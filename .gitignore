@@ -1,0 +1,17 @@
+# Xcode
+*.xcodeproj/
+build/
+DerivedData/
+*.xcworkspace/
+xcuserdata/
+*.xcuserstate
+*.swp
+.DS_Store
+# CocoaPods
+Pods/
+*.xcworkspace
+# SPM
+.swiftpm/
+.build/
+# Backend
+node_modules/

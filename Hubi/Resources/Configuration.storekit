@@ -1,0 +1,40 @@
+{
+  "identifier" : "ABCD1234",
+  "nonRenewingSubscriptions" : [],
+  "products" : [
+    {
+      "displayPrice" : "7.99",
+      "familyShareable" : false,
+      "internalID" : "lifetime001",
+      "localizations" : [
+        {
+          "description" : "一次性 ¥49 终身解锁全部预设模板与智能体",
+          "displayName" : "Hub-i 终身高级版",
+          "locale" : "zh_CN"
+        },
+        {
+          "description" : "One-time purchase. Unlock all preset templates and agents forever.",
+          "displayName" : "Hub-i Lifetime Premium",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "com.hubi.lifetime.v1",
+      "referenceName" : "Hub-i Lifetime",
+      "type" : "NonConsumable"
+    }
+  ],
+  "settings" : {
+    "_applicationInternalID" : "0",
+    "_developerTeamID" : "5BJ2L86A5P",
+    "_failTransactionsEnabled" : false,
+    "_lastSynchronizedDate" : 0,
+    "_locale" : "en_US",
+    "_storefront" : "USA",
+    "_storeKitErrors" : []
+  },
+  "subscriptionGroups" : [],
+  "version" : {
+    "major" : 4,
+    "minor" : 0
+  }
+}

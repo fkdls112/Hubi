@@ -1,0 +1,134 @@
+[
+  {
+    "id": "openai",
+    "name": "OpenAI",
+    "providerKey": "openai",
+    "defaultBaseURL": "https://api.openai.com/v1",
+    "defaultModel": "gpt-4o",
+    "description": "OpenAI 官方 API,GPT-4o / GPT-4 / o1 系列",
+    "icon": "circle.dashed",
+    "tintColor": "#10A37F",
+    "requiredTier": "premium"
+  },
+  {
+    "id": "anthropic",
+    "name": "Anthropic Claude",
+    "providerKey": "anthropic",
+    "defaultBaseURL": "https://api.anthropic.com",
+    "defaultModel": "claude-sonnet-4-5",
+    "description": "Anthropic Claude 官方 API,Sonnet / Opus / Haiku",
+    "icon": "leaf.fill",
+    "tintColor": "#D97757",
+    "requiredTier": "premium"
+  },
+  {
+    "id": "gemini",
+    "name": "Google Gemini",
+    "providerKey": "openai",
+    "defaultBaseURL": "https://generativelanguage.googleapis.com/v1beta/openai",
+    "defaultModel": "gemini-2.0-flash",
+    "description": "Google Gemini,OpenAI 兼容端点,免费额度大",
+    "icon": "sparkles",
+    "tintColor": "#4285F4",
+    "requiredTier": "premium"
+  },
+  {
+    "id": "deepseek",
+    "name": "DeepSeek",
+    "providerKey": "openai",
+    "defaultBaseURL": "https://api.deepseek.com/v1",
+    "defaultModel": "deepseek-chat",
+    "description": "DeepSeek 官方,OpenAI 兼容,价格低",
+    "icon": "fish.fill",
+    "tintColor": "#2F6BFF",
+    "requiredTier": "premium"
+  },
+  {
+    "id": "xiaomi-mimo",
+    "name": "小米 MiMo",
+    "providerKey": "openai",
+    "defaultBaseURL": "https://token-plan-cn.xiaomimimo.com/v1",
+    "defaultModel": "mimo-v2.5-pro",
+    "description": "小米澎湃大模型 MiMo,OpenAI 兼容",
+    "icon": "m.circle.fill",
+    "tintColor": "#FF6900",
+    "requiredTier": "premium"
+  },
+  {
+    "id": "kimi",
+    "name": "月之暗面 Kimi",
+    "providerKey": "openai",
+    "defaultBaseURL": "https://api.moonshot.cn/v1",
+    "defaultModel": "moonshot-v1-128k",
+    "description": "Moonshot Kimi,128K 长上下文",
+    "icon": "moon.stars.fill",
+    "tintColor": "#6F4FF7",
+    "requiredTier": "premium"
+  },
+  {
+    "id": "zhipu-glm",
+    "name": "智谱 GLM",
+    "providerKey": "openai",
+    "defaultBaseURL": "https://open.bigmodel.cn/api/paas/v4",
+    "defaultModel": "glm-4-plus",
+    "description": "智谱 AI GLM-4 系列",
+    "icon": "z.circle.fill",
+    "tintColor": "#1D4ED8",
+    "requiredTier": "premium"
+  },
+  {
+    "id": "qwen",
+    "name": "通义千问 Qwen",
+    "providerKey": "openai",
+    "defaultBaseURL": "https://dashscope.aliyuncs.com/compatible-mode/v1",
+    "defaultModel": "qwen-max",
+    "description": "阿里云通义千问,Qwen Max / Plus",
+    "icon": "q.circle.fill",
+    "tintColor": "#615CED",
+    "requiredTier": "premium"
+  },
+  {
+    "id": "nvidia-nim",
+    "name": "NVIDIA NIM",
+    "providerKey": "openai",
+    "defaultBaseURL": "https://integrate.api.nvidia.com/v1",
+    "defaultModel": "meta/llama-3.3-70b-instruct",
+    "description": "NVIDIA NIM,Llama / Mixtral 等开源模型",
+    "icon": "n.circle.fill",
+    "tintColor": "#76B900",
+    "requiredTier": "premium"
+  },
+  {
+    "id": "openrouter",
+    "name": "OpenRouter",
+    "providerKey": "openai",
+    "defaultBaseURL": "https://openrouter.ai/api/v1",
+    "defaultModel": "openai/gpt-4o",
+    "description": "聚合 200+ 模型,统一计费",
+    "icon": "arrow.triangle.branch",
+    "tintColor": "#9333EA",
+    "requiredTier": "premium"
+  },
+  {
+    "id": "hermes",
+    "name": "Hermes Agent",
+    "providerKey": "hermes",
+    "defaultBaseURL": "",
+    "defaultModel": "hermes-agent",
+    "description": "自部署 Hermes Agent,含工具调用与持久记忆,需 Pro",
+    "icon": "brain.head.profile",
+    "tintColor": "#7B61FF",
+    "requiredTier": "premium"
+  },
+  {
+    "id": "openclaw",
+    "name": "OpenClaw 自动化",
+    "providerKey": "openclaw",
+    "defaultBaseURL": "",
+    "defaultModel": "openclaw",
+    "description": "闲鱼/钉钉自动化代理,需 Plus 订阅",
+    "icon": "ticket.fill",
+    "tintColor": "#FF6B35",
+    "requiredTier": "premium"
+  }
+]
